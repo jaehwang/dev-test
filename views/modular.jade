@@ -24,3 +24,44 @@ section
       ul
         li 이해 하기 쉽고, 테스트하기 쉬움
         li 재사용 하기 쉽고, 여럿이 일을 나눠 하기 쉬움
+
+section
+
+  h2 복잡성 다루기: 나누기와 이름 붙이기
+  p index.jade
+  pre
+    code.
+      extends layout
+      
+      block content
+        .reveal
+          .slides
+            section
+              include title.jade
+            section
+              include larry_and_kent.jade
+            section
+              include why.jade
+            section
+              include hacker.jade
+            section
+              include responsibility.jade
+            section
+              h2 Unit Test in V&V
+              img(src='image/vv.png')
+            section
+              include bug.jade
+            section
+              include proof_review.jade
+            section
+              include static_analysis.jade
+            section
+              include sw_company.jade
+            section
+              include code_quality.jade
+            section
+              include modular.jade
+            section
+              include demo.jade
+            section
+              h2 END
