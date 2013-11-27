@@ -1,0 +1,50 @@
+section
+  h2 Proof & Review
+
+  p 모든 리스트에 대해 항상 길이를 계산하는가?
+
+  small
+    p.
+      \[ 
+      \mbox{list} \rightarrow \mbox{nil} \mid n::\mbox{list} \\
+      \]
+      \[
+      \begin{array}{rlcl}
+      \mbox{length} & \mbox{nil}    & = & 0 \\
+      \mbox{length} & \mbox{nil}::l & = & 1 + \mbox{length}\ l
+      \end{array}
+      \]
+  
+section
+  h2 Proof & Review
+
+  p 모든 리스트에 대해 항상 할당된 메모리를 모두 반환하는가?
+
+  pre 
+    code(data-trim,contenteditable).
+      typedef struct _list {
+        int n;
+        struct _list *next;
+      } list;
+      
+      void free_list(list *l)
+      {
+        if (l) {
+          list *next = l->next;
+          free(l);
+          free_list(next);
+        }
+      }
+
+section
+  h2 Proof & Review
+
+  ul
+    li 해결책
+      ul
+        li Formal Proof: Induction
+        li Peer Review: Formal Inspection, Pair Programming, ...
+    li 그러나
+      ul
+        li Formal Proof: Induction
+        li Programming is NOT WISWIG!

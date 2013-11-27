@@ -14,6 +14,11 @@ script.
     // default/cube/page/concave/zoom/linear/fade/none
     transition: Reveal.getQueryHash().transition || 'default', 
 
+    math: {
+        mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+    },
+
     // Optional libraries used to extend on reveal.js
     dependencies: [
       { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -21,6 +26,7 @@ script.
       { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
       { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
       { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/math/math.js', async: true }
     ]
   });

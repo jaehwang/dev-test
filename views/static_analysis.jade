@@ -1,0 +1,39 @@
+section
+  h2 Static Analysis Tools
+
+  p Language Spec
+  ul
+    li Syntactic Error
+    li Type Error
+    li Runtime Library Misuse
+  pre
+    code.
+      $ cat foo.c
+      int foo(int i)
+      {
+        int j;
+        return i+j;
+      }
+      $ gcc -Wall -c foo.c
+      foo.c: In function ‘foo’:
+      foo.c:5:5: warning: ‘j’ is used uninitialized in this function
+
+section
+  h2 Static Analysis Tools
+
+  p Coding Rule
+  ul
+    li Style Violation
+    li Metric Threshold Violation
+
+  img(src='image/sonar.png')
+
+section
+  h2 Static Analysis Tools
+
+  p Domain Specific? No
+  ul
+    li Functions
+    li Quality Attributes
+    li Constraints
+    li Design
