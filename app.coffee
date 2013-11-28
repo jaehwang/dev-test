@@ -22,7 +22,10 @@ if 'development' == app.get('env')
   app.use express.errorHandler()
 
 app.get '/', (req, res) ->
-  res.render 'index', { req: req }
+  res.render 'index', { req: req, include_shell:1 }
+# disable shellinabox
+app.get '/no-shell', (req, res) ->
+  res.render 'index', { req: req, include_shell:0 }
 
 http.createServer(app).listen app.get('port'), ->
   console.log('Express server listening on port ' + app.get('port'))

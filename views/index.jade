@@ -28,7 +28,10 @@ block content
         include code_quality.jade
       section
         include modular.jade
-      section
-        include demo.jade
+
+      if include_shell != 0
+        section
+          include demo.jade
+
       section
         h2 END
