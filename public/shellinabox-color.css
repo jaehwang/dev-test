@@ -1,0 +1,41 @@
+#vt100 #cursor.bright {
+  background-color: white;
+  color:            black;
+}
+
+#vt100 #scrollable {
+  color:            #ffffff;
+  background-color: #230031;
+}
+
+#vt100 #scrollable.inverted {
+  color:            #230031;
+  background-color: #ffffff;
+}
+
+#vt100 .ansi15 {
+  color:            #000000;
+}
+
+#vt100 .bgAnsi0 {
+  background-color: #FFFFFF;
+}
+
+/*
+#vt100 .ansi0  { color:  #000000;}
+*/
+#vt100 .ansi1  { color:  #CC6666;}
+#vt100 .ansi2  { color:  #33CC66;}
+#vt100 .ansi3  { color:  #CCCC66;}
+#vt100 .ansi4  { color:  #3366CC;}
+#vt100 .ansi5  { color:  #CC3366;}
+#vt100 .ansi6  { color:  #66CCCC;}
+#vt100 .ansi7  { color:  #808080;}
+#vt100 .ansi8  { color:  #EEDDFF;}
+#vt100 .ansi9  { color:  #FF9966;}
+#vt100 .ansi10 { color:  #66FF99;}
+#vt100 .ansi11 { color:  #FFFF99;}
+#vt100 .ansi12 { color:  #6699FF;}
+#vt100 .ansi13 { color:  #FF6699;}
+#vt100 .ansi14 { color:  #99FFFF;}
+#vt100 .ansi15 { color:  #FFFFFF;}

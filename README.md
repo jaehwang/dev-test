@@ -3,7 +3,9 @@
     $ npm install
 
 Demo slide에서 terminal을 사용하려면 shellinabox를 설치해야한다.
+이때 public/shellinabox-color.css를 이용한다.
 
+     $ sudo shellinaboxd -t -s /:LOGIN --css=/path/to/shellinabox-color.css
 
 # 서버 실행 #
 
