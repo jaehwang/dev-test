@@ -38,14 +38,18 @@ block content
 
 block test_header
   link(rel='stylesheet', href='qunit/qunit-1.12.0.css')
+  script(src='http://code.jquery.com/jquery-1.10.1.min.js');
 
 block test_footer
   script(src='qunit/qunit-1.12.0.js')
   script.
-    test("hello test", function() {
-      ok(1 == "1", "Passed!");
-    });
-    test("world test", function() {
-      ok(2 == "2", "Passed!");
+    test("Basic Structure", function() {
+      $("#doc_title").each(function() {
+        equal(this.innerHTML, 'Testing Completes Developing', 
+              "Document Title");
+      });
+      equal($("section").length, 34, "Number of Sections");
+      equal($("section h2").length, 25, "Number of H2");
+      equal($("section h3").length, 2, "Number of H3");
     });
 
