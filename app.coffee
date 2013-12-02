@@ -22,7 +22,15 @@ if 'development' == app.get('env')
   app.use express.errorHandler()
 
 app.get '/', (req, res) ->
-  res.render 'index', { req: req, include_shell:1 }
+  # check if shellinabox is running
+  _req = http.get 'http://localhost:4200', (_res) ->
+    if _res.statusCode == 200
+      res.render 'index', { req: req, include_shell:1 }
+    else
+      res.render 'index', { req: req, include_shell:0 }
+  _req.on 'error', (e) ->
+    res.render 'index', { req: req, include_shell:0 }
+
 # disable shellinabox
 app.get '/no-shell', (req, res) ->
   res.render 'index', { req: req, include_shell:0 }
