@@ -17,9 +17,11 @@ module.exports = function(grunt) {
     });
 
     grunt.event.on('qunit.log', function(result,actual,expected,message,source) {
+        /*
         grunt.log.ok("  result: "+result);
         grunt.log.ok("  actual: "+actual);
         grunt.log.ok("  expected: "+expected);
+        */
     });
 
     grunt.event.on('qunit.testDone', function(name,failed,passed,total) {
