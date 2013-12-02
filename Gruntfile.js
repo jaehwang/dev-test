@@ -7,6 +7,30 @@ module.exports = function(grunt) {
             zip: 'dev-test.tar.gz'
     };
 
+    grunt.event.on('qunit.begin', function() {
+        grunt.log.ok('');
+    });
+    grunt.event.on('qunit.moduleStart', function(name) {
+    });
+
+    grunt.event.on('qunit.testStart', function(name) {
+    });
+
+    grunt.event.on('qunit.log', function(result,actual,expected,message,source) {
+    });
+
+    grunt.event.on('qunit.testDone', function(name,failed,passed,total) {
+        grunt.log.ok('')
+        grunt.log.ok("Running "+name+': '+failed+' '+'failed');
+        grunt.log.ok("Running "+name+': '+passed+' '+'passed');
+    });
+
+    grunt.event.on('qunit.moduleDone', function(name,failed,passed,total) {
+    });
+
+    grunt.event.on('qunit.done', function(failed,passed,total,runtime) {
+    });
+
     // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -14,7 +38,7 @@ module.exports = function(grunt) {
     
         // Tests will be added soon
         qunit: {
-            files: [ 'public/test.html' ]
+            files: [ target.test ]
         },
 
         connect: {
@@ -30,7 +54,8 @@ module.exports = function(grunt) {
             test: {
                 options: {
                     data: {
-                        include_shell: 0
+                        include_shell: 0,
+                        testing: true
                     }
                 },
                 files: [
@@ -56,7 +81,7 @@ module.exports = function(grunt) {
                     mode: 'tgz'
                 },
                 files: [
-                  {src:['public/**','!'+target.test]}
+                  {src:['public/**','!'+target.test, '!public/qunit/**']}
                 ]
             }
         },
@@ -92,6 +117,6 @@ module.exports = function(grunt) {
     grunt.registerTask( 'serve', [ 'connect', 'watch' ] );
 
     // Run tests
-    grunt.registerTask( 'test', [ 'qunit' ] );
+    grunt.registerTask( 'test', [ 'jade:test', 'qunit' ] );
 
 };

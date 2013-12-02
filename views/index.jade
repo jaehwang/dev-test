@@ -35,3 +35,17 @@ block content
 
       section
         h2 END
+
+block test_header
+  link(rel='stylesheet', href='qunit/qunit-1.12.0.css')
+
+block test_footer
+  script(src='qunit/qunit-1.12.0.js')
+  script.
+    test("hello test", function() {
+      ok(1 == "1", "Passed!");
+    });
+    test("world test", function() {
+      ok(2 == "2", "Passed!");
+    });
+
