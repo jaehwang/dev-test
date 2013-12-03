@@ -1,6 +1,15 @@
 /* global module:false */
 module.exports = function(grunt) {
-    var port = grunt.option('port') || 8000;
+    var port       = grunt.option('port') || 8000;
+    var shell_host = grunt.option('shell_host') || false;
+    var include_shell = 0;
+    var shell_opt = {}
+    if (shell_host ) {
+        include_shell = 1;
+        shell_opt.protocol = 'http';
+        shell_opt.host = shell_host;
+    }
+
     var target = {
             html: 'public/index.html',
             test: 'public/test.html',
@@ -59,7 +68,8 @@ module.exports = function(grunt) {
             test: {
                 options: {
                     data: {
-                        include_shell: 0,
+                        include_shell: include_shell,
+                        req: shell_opt,
                         testing: true
                     }
                 },
@@ -70,7 +80,8 @@ module.exports = function(grunt) {
             release: {
                 options: {
                     data: {
-                        include_shell: 0
+                        include_shell: include_shell,
+                        req: shell_opt
                     }
                 },
                 files: [
