@@ -50,7 +50,6 @@ block test_footer
 
       $("section > .title").each(function() {
         equal(this.tagName, "H2", "Slide title must be H2");
-        console.log(this.innerHTML);
       });
       $("section > h2").each(function() {
         ok($(this).hasClass('title'), "H2 under section must be title class");
