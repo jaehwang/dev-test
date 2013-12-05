@@ -5,7 +5,7 @@
 Demo slide에서 terminal을 사용하려면 shellinabox를 설치해야한다.
 이때 public/shellinabox-color.css를 이용한다.
 
-     $ sudo shellinaboxd -t -s /:LOGIN --css=/path/to/HERE/public/shellinabox-color.css
+    $ sudo shellinaboxd -t -s /:LOGIN --css=/path/to/HERE/public/shellinabox-color.css
 
 # Test #
 
@@ -60,3 +60,19 @@ http://server:3000/index.html
 ## Grunt로 실행하는 경우 ##
 
 http://server:3000/index.html
+
+# TODO #
+
+## PhantomJS 오류 ##
+
+qunit test 실행 시 PhantomJS 오류가 발생하는 경우가 있음. 재시도 하면 성공함. 
+
+    $ grunt test
+    Running "jade:test" (jade) task
+    File "public/test.html" created.
+    
+    Running "qunit:files" (qunit) task
+    Testing public/test.html
+    Warning: PhantomJS timed out, possibly due to a missing QUnit start() call. Use --force to continue.
+    
+    Aborted due to warnings.

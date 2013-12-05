@@ -1,3 +1,38 @@
-h2.title Demo
+section
 
-iframe(width='800', height='600', src=req.protocol+'://'+req.host+':4200')
+  h2.title Example: Testing Slides
+  p index.jade
+  pre
+    code.
+      extends layout
+      block content
+        .reveal
+          .slides
+            section
+              include title.jade
+            section
+              include larry_and_kent.jade
+            // 중략 
+            section
+              h2.title END
+      // 테스트 코드 시작
+      block test_header
+        link(rel='stylesheet', href='qunit/qunit-1.12.0.css')
+        script(src='http://code.jquery.com/jquery-1.10.1.min.js');
+      block test_footer
+        script(src='qunit/qunit-1.12.0.js')
+        script.
+          test("Basic Structure", function() {
+            $("section > .title").each(function() {
+              equal(this.tagName, "H2", "Slide title must be H2");
+            });
+            $("section > h2").each(function() {
+              ok($(this).hasClass('title'), "H2 under section must be title class");
+            });
+          });
+
+if include_shell != 0
+  section
+    h2.title Demo
+
+    iframe(width='800', height='600', src=req.protocol+'://'+req.host+':4200')
