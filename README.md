@@ -1,6 +1,16 @@
 # 준비하기 #
 
+node.js가 설치되어 있다고 가정한다.
+
+## Grunt 설치 ###
+
+    $ npm install -g grunt-cli
+
+## 패키지 설치 ##
+
     $ npm install
+
+## shellinabox 설치 ##
 
 Demo slide에서 terminal을 사용하려면 shellinabox를 설치해야한다.
 이때 public/shellinabox-color.css를 이용한다.
