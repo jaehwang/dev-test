@@ -1,3 +1,5 @@
+[![Dependency Status](https://gemnasium.com/badges/github.com/jaehwang/dev-test.svg)](https://gemnasium.com/github.com/jaehwang/dev-test)
+
 # 준비하기 #
 
 node.js가 설치되어 있다고 가정한다.
